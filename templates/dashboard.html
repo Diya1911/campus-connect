@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Welcome, {{ user['name'] }}!</h2>
+
+    {% if user['role'] == 'student' %}
+        <p>You are logged in as a <strong>Student</strong>.</p>
+        <a href="/apply" class="btn">View Available Projects</a>
+
+    {% elif user['role'] == 'faculty' %}
+        <p>You are logged in as <strong>Faculty</strong>.</p>
+        <a href="/add_project" class="btn">Add New Project</a>
+        <a href="/view_my_projects" class="btn">View My Projects</a>
+    {% endif %}
+</div>
+{% endblock %}

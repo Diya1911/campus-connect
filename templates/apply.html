@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Available Projects{% endblock %}
+{% block content %}
+<h2>Available Projects</h2>
+{% if projects %}
+    <ul>
+    {% for project in projects %}
+        <li>
+            <strong>{{ project[1] }}</strong><br>
+            {{ project[2] }}<br>
+            <small>Posted by: {{ project[3] }}</small><br>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No approved projects available right now.</p>
+{% endif %}
+{% endblock %}
